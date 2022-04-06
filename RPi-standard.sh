@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 sudo apt update && apt upgrade
-echo "yes"
+echo "Y"
