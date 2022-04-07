@@ -1,3 +1,2 @@
 #! /usr/bin/bash
-yes | sudo apt update && apt upgrade
-
+yes y | sudo apt update && apt upgrade
