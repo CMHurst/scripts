@@ -1,10 +1,14 @@
 #! /usr/bin/bash
+
+# Default Values
 update = "y"
 xdrp = "y"
 zt = "n"
 ztconnect = "y"
 st = "n"
 tv = "n"
+ph = "n"
+ap = "n"
 
 # Update, Upgrade and Autoremove Input
 read -n1 -p "Update/Upgrade/Autoremove? [Y,n]:" updateInput
@@ -32,12 +36,18 @@ read -n1 -p "Install teamviewer host? [y, N]:" tvInput
 if [ $tvInput == "y" ] || [ $tvInput == "Y" ]; then tv = "y" fi # Overwrite default
 
 
+# Pi-Hole Input
+read -n1 -p "Install Pi-Hole? [y, N]:" phInput
+if [ $phInput == "y" ] || [ $phInput == "Y" ]; then ph = "y" fi # Overwrite default
 
+
+# Apache Input
+read -n1 -p "Install Apache Web Server? [y, N]:" apInput
+if [ $apInput == "y" ] || [ $apInput == "Y" ]; then ap = "y" fi # Overwrite default
 
 
 
 # Installation Scripts
-
 
 # Update, Upgrade and Autoremove
 if [ $update == "y" ] || [ $update == 'Y' ]; then
@@ -78,3 +88,18 @@ if [ $tv == "y"] || [ $tv == "Y" ]; then
     sudo teamviewer setup
 fi
 
+
+# Pi-Hole Install
+if [ $ph == "y" ] || [ $ph == "Y" ]; then
+    wget -O basic-install.sh https://install.pi-hole.net
+    echo "\y" | sudo bash basic-install.sh
+fi
+
+
+# Apache Web Server Install
+if [ $ap == "y" ] || [ $ap == "Y" ]; then
+    echo "\y" | sudo apt install apache2 -y
+    cd /var/www/html
+    sudo chown pi: index.html
+    cd ~
+fi
