@@ -6,9 +6,9 @@ input = False
 
 if input # Updates, upgrades, and cleans repos
 then
-    printf ("\y\y\y") | sudo apt update && apt upgrade && apt auto-remove
+    printf("\y\y\y") | sudo apt update && apt upgrade && apt auto-remove
 else
-    printf ("Skipping updates")
+    printf("Skipping updates")
 fi
 
 
