@@ -1,9 +1,12 @@
 #! /usr/bin/bash
 
-echo "Would you like to install ZeroTier?"
-read zt
+read -n1 -p "Would you like to install ZeroTier? [y, N]" zt
+
 
 sudo apt-get update && apt-get upgrade -y && apt-get auto-remove -y
 
-echo zt
+case $zt in
+    y|Y echo true ;;
+    n|N echo false ;;
+    *) echo invalid
 
