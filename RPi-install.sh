@@ -1,3 +1,7 @@
 #! /usr/bin/bash
-sudo apt update && apt upgrade -y
+promptResponses = ""
+promptResponses += "y"
+promptResponses += "y"
+
+printf promptResponses | sudo apt update && apt upgrade
 
