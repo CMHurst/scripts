@@ -1,13 +1,13 @@
 #! /usr/bin/bash
 promptResponses = ""
 
-printf(\n, "Would you like to update, upgrade and clean local repositories?")
+printf (\n, "Would you like to update, upgrade and clean local repositories?")
 read input
 
 if input # Updates, upgrades, and cleans repos
 then
-    printf("\y\y\y") | sudo apt update && apt upgrade && apt auto-remove
+    printf ("\y\y\y") | sudo apt update && apt upgrade && apt auto-remove
 fi
-    printf(\n, "Skipping updates")
+    printf (\n, "Skipping updates")
 
 
