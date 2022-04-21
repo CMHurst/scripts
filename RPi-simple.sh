@@ -1,8 +1,8 @@
 #! /usr/bin/bash
 input = False
 
-printf "Would you like to update, upgrade and clean local repositories?"
-read input
+#printf "Would you like to update, upgrade and clean local repositories?"
+#read input
 
 if input # Updates, upgrades, and cleans repos
 then
