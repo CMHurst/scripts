@@ -6,7 +6,8 @@ read input
 if input # Updates, upgrades, and cleans repos
 then
     printf ("\y\y\y") | sudo apt update && apt upgrade && apt auto-remove
-fi
+else
     printf ("Skipping updates")
+fi
 
 
